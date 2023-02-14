@@ -1,0 +1,30 @@
+.stepper {
+    border-color: $clr-border-form;
+
+    .step:not(.step-active) {
+        color: $clr-text-light;
+
+        .badge-secondary {
+            background-color: $clr-text-light;
+        }
+    }
+
+    .step-active {
+        background-color: $clr-bg-light;
+
+        &::before {
+            border-left-color: $clr-border-form;
+        }
+
+        &::after {
+            border-left-color: $clr-bg-light;
+        }
+
+        .step-content {
+
+            &::after {
+                background: transparent;
+            }
+        }
+    }
+}

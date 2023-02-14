@@ -1,0 +1,115 @@
+.home-hero__container {
+    padding-top: 80px;
+    padding-bottom: 160px;
+
+    &::before {
+        content: '';
+        background: url(https://jtl.hanf.com/media/image/opc/lg/bg-pattern-light-green.jpg);
+        clip-path: url(#light-green-middle-2);
+        display: block;
+        @include position;
+        background-size: $bg-pattern-size;
+        background-color: $clr-bg-green;
+    }
+}
+
+.home-hero__grid-layout {
+    max-width: 1250px;
+    margin-inline: auto;
+
+    .col {
+        
+        @include breakpoint(min, medium) {
+            display: grid;
+            align-content: center;
+            justify-content: right;
+        }
+
+        &[data-area-id=col-0] {
+            @include breakpoint(max, medium) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        &[data-area-id=col-1] {
+            grid-row-gap: 20px;
+
+            > * {
+                @include breakpoint(min, medium) {
+                    max-width: 350px;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: $clr-text;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 50px;
+        color: $primary;
+        font-family: $f-primary;
+    }
+
+    .btn {
+        border-radius: 90px;
+        color: $primary;
+        background-color:  $clr-accent;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: none;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.hero-badges {
+    margin-top: calc(-175px / 2);
+    margin-bottom: calc(-175px / 2);
+
+    .row {
+        @include breakpoint(max, medium) {
+            flex-wrap: nowrap;
+
+            .col {
+                flex: 0 1 50%;
+            }
+        }
+    }
+
+    .hero-badges__icon {
+        svg {
+            width: 175px !important;
+            height: 175px !important;
+
+            @include breakpoint(max, medium) {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+        
+    }
+}
+
+.home-categories {
+    padding-top: 80px;
+    padding-bottom: 160px;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-left: clamp(20px, 2.6vw, 50px);
+    padding-right: clamp(20px, 2.6vw, 50px);
+
+    &::before {
+        content: '';
+        background: url(https://jtl.hanf.com/media/image/opc/lg/bg-pattern-light-green.jpg);
+        -webkit-clip-path: url(#light-green-middle-2);
+        clip-path: url(#light-green-middle-2);
+        display: block;
+        @include position;
+        background-size: 30%;
+    }
+}

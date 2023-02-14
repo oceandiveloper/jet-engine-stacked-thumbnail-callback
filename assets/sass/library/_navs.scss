@@ -1,0 +1,149 @@
+#header-top-bar {
+    > .container-fluid {
+        padding-right: 0;
+    }
+
+    .topbar-main {
+        > .nav-item {
+
+            &:not(:first-child) {
+                margin-left: 1rem;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            > .nav-link {
+                color: $primary;
+                font-size: 0.875rem;
+                padding: 1rem 0;
+            }
+        }
+    }
+}
+
+
+// nav scrollbar
+// .nav-scrollbar {
+//    overflow: auto !important;
+// }
+
+.navbar {
+  flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+
+    @include breakpoint(min, large) {
+        flex-wrap: wrap;
+    }
+
+    @include breakpoint(max, large) {
+        padding-right: 1rem !important;
+    }
+
+    @include breakpoint(max, small) {
+        padding-right: 0.25rem !important;
+    }
+
+    #shop-nav {
+        flex: 1 1 100%;
+        order: 1;
+
+        #search {
+            flex-grow: 1;
+            margin-right: 0.5rem;
+
+            .input-group {
+                width: 100%;
+
+                .twitter-typeahead {
+                    flex-grow: 1;
+                }
+            }
+
+        }
+    }
+
+    #mainNavigation {
+        order: 2;
+        // z-index: 2000;
+        position: relative;
+        // overflow: visible;
+
+        @include breakpoint(max, large) {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            background: rgb(255, 255, 255);
+            top: 60px;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-scrollbar-arrow {
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    .navbar-nav {
+        padding-bottom: 0;
+        // -ms-overflow-style: none;  // Hide scrollbar for IE & Edge
+        // scrollbar-width: none;  // Hide scrollbar for Firefox
+        // overflow: visible;
+
+        // &::-webkit-scrollbar {
+        //     display: none; // Hide scrollbar for Chrome, Safari and Opera
+        // }
+
+        > .nav-item {
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+            }
+
+            &:last-child {
+                .nav-link  {
+                    font-weight: 600;
+                    color: $clr-highlight;
+
+                    &::before {
+                        border-color: $clr-highlight;
+                    }
+                }
+            }
+
+            > .nav-link {
+                padding: 0 0.2rem 0.3rem;
+                font-weight: 500;
+                color: $primary;
+
+                &::before {
+                    border-width: 0 0 3px;
+                }
+            }
+        }
+    }
+    
+}
+
+.burger-menu-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $primary;
+    // z-index: 2000;
+}
+
+.navbar-toggler  {
+    &[aria-expanded=false] .navbar-toggler-icon,
+    .navbar-toggler-icon:before,
+    .navbar-toggler-icon:after {
+        background-color: $clr-white;
+    }
+}
+
+.nav-mobile-header {
+    width: 100%;
+}

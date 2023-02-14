@@ -1,0 +1,35 @@
+$sidebar-width-tablet: __remify(270px);
+$sidebar-width-desktop: __remify(300px);
+.is-shop-page {
+    // background-color: red;
+
+    #content {
+        > .row {
+            > div {
+                @include breakpoint(min, large) {
+                    flex: 0 0 calc(100% - $sidebar-width-tablet);
+                    max-width: calc(100% - $sidebar-width-tablet);
+                }
+
+                @include breakpoint(min, 1300px)  {
+                    flex: 0 0 calc(100% - $sidebar-width-desktop);
+                    max-width: calc(100% - $sidebar-width-desktop);
+                }
+            }
+
+            > #sidepanel_left {
+                // padding-left: 0;
+
+                @include breakpoint(min, large) {
+                    flex: 0 0 $sidebar-width-tablet;
+                    max-width: $sidebar-width-tablet;
+                }
+
+                @include breakpoint(min, 1300px) {
+                    flex: 0 0 $sidebar-width-desktop;
+                    max-width: $sidebar-width-desktop;
+                }
+            }
+        }
+    }
+}

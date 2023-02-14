@@ -1,0 +1,32 @@
+//Consent Manager
+#consent-manager {
+    font-family: $f-primary;
+    color: $clr-text;
+    line-height: 1.3;
+
+    a {
+        color: $primary;
+
+        &:focus, &:hover {
+            text-decoration: underline;;
+        }
+    }
+
+    hr {
+        border-bottom-color: $clr-border-form;
+    }
+}
+
+.consent-display-1 {
+    color: $primary;
+}
+
+.consent-display-3, 
+.consent-display-2 {
+    color: $clr-text;
+}
+
+.consent-help {
+    color: $clr-text-light;
+    line-height: 1.3;
+}

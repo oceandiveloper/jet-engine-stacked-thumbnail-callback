@@ -1,0 +1,7 @@
+.btn-outline-primary {
+    &:focus,
+    &:hover {
+        background-color: $primary;
+        color: $clr-white;
+    }
+}

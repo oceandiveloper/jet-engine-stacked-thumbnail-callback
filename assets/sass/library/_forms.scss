@@ -1,0 +1,50 @@
+.form-control {
+    border-radius: $br-button;
+    border-color: $clr-border-form;
+    background-color: $bg-form-light;
+}
+
+textarea.form-control {
+    border-radius: $br-md;
+    border: 1px solid $clr-border-form;
+}
+
+.form-counter {
+    border-radius: $br-button;
+    border-color: $clr-border-form;
+    background-color: $bg-form-light;
+}
+
+// Shop Elemente
+.price-range-inputs {
+    .input-group-prepend {
+        .input-group-text {
+            border-radius: 0 $br-button $br-button 0;
+            border-color: $clr-border-form;
+            color: $clr-text-light;
+            background-color: $clr-border-light;
+        }
+    }
+}
+
+// Consent Manager
+.consent-switch {
+
+    .consent-label {
+        color: $primary;
+
+        // &::before {
+        //     background-color: $clr-bg-green;
+        // }
+    }
+
+    .consent-input {
+        &:checked {
+            ~ .consent-label {
+                &::before {
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+}

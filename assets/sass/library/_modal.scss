@@ -1,0 +1,11 @@
+.modal-backdrop {
+    background-color: $secondary;
+    
+    &.show {
+        opacity: 0.5;
+    }
+}
+
+.modal-content {
+    border-radius: $br-modal;
+}

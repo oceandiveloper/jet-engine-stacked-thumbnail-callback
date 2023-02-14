@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $font-style: normal,
+  $font-weight: 400,
+  $file-formats: eot woff2 woff ttf svg
+) {
+  @if & {
+    @error "You must call the mixin at the root level of your style sheet, not in the `#{&+'{'+'}'}` selector.";
+  } @else {
+    
+    $list: ();
+
+    @if index(100 200 300 400 500 600 700 800 900, $font-style) {
+      $font-weight: $font-style;
+      $font-style: normal;
+    } @else if not
+      index("normal" "italic" "oblique", $font-style) and
+      type-of($font-style) !=
+      "number"
+    {
+      $font-style-list: ();
+      @for $i from 1 through length($font-style) {
+        $font-style-list: append($font-style-list, nth($font-style, $i), comma);
+      }
+      @for $i from 1 through length($font-style-list) {
+        @if index("eot" "woff2" "woff" "ttf" "svg", nth($font-style-list, $i)) {
+          $file-formats: $font-style-list;
+          $font-style: normal;
+        }
+      }
+    }
+
+    @font-face {
+      font-family: $font-family;
+      @if index($file-formats, eot) {
+        src: url("#{$file-path}.eot");
+      }
+      @for $i from 1 through length($file-formats) {
+        $list: append($list, __fontSource($font-family, $file-path, nth($file-formats, $i)), comma);
+      }
+      src: $list;
+      font-style: $font-style;
+      font-weight: $font-weight;
+      @content;
+    }
+  }
+}
+
+@function __fontSource($font-family, $file-path, $file-formats) {
+    $list: ();
+    @if map-has-key($map-for-font-formats, $file-formats) {
+      @if index(eot woff2 woff ttf, $file-formats) {
+        $src-value: url('#{$file-path}.#{if(not index(eot, $file-formats), $file-formats, $file-formats+"?#iefix")}')
+          #{map-get($map-for-font-formats, $file-formats)};
+        $list: append($list, $src-value, comma);
+      } @else if index(svg, $file-formats) {
+        $font-family: __clearWhitespace($font-family);
+        $src-value: url('#{$file-path}.#{$file-formats + "#" + $font-family}')
+          #{map-get($map-for-font-formats, $file-formats)};
+        $list: append($list, $src-value, comma);
+      }
+    }
+    @return $list;
+}
+
+@mixin uppercase( $letter-spacing: 0.5px ) {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+}

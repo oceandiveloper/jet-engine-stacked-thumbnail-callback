@@ -1,0 +1,499 @@
+.umzug-hinweis {
+    background: $clr-accent;
+    color: $clr-text;
+    text-align: center;
+    padding: __remify(5px) __remify(30px);
+    position: relative;
+    font-size: __remify(14px);
+
+    .xit {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        // &:hover {
+        //     cursor: pointer;
+        // }
+
+        svg {
+            fill: $primary;
+        }
+    }
+    
+}
+
+header {
+    box-shadow: unset;
+
+    @include breakpoint(max, medium) {
+        padding-bottom: 4.375rem;
+    }
+
+    > .container-fluid {
+        max-width: 1920px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        // display: flex;
+        // justify-content: space-between;
+        // gap: 0.5rem;
+
+        @include breakpoint(min, small) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            gap: 1rem;
+        }
+
+        @include breakpoint(min, large) {
+            gap: 3rem;
+        }
+    }
+
+    .search-form-wrapper-fixed {
+        flex-grow: 1;
+
+        @include breakpoint(max, large) {
+            padding-right: 0.5rem !important;
+        }
+
+        @include breakpoint(max, medium) {
+            position: absolute;
+            bottom: 1.6rem;
+            left: 1rem;
+            right: 1rem;
+            width: unset;
+            padding-right: 0 !important;
+        }
+
+        @include breakpoint(max, small) {
+            left: 0.5rem;
+            right: 0.5rem;
+        }
+    }
+
+    .search-wrapper {
+        .input-group {
+            border-radius: $br-button;
+            border: 1px solid transparent;
+            background-color: $clr-bg-light;
+            align-items: center;
+
+            &:focus-within {
+                border-color: $clr-accent;
+
+                .btn {
+                    background-color: $clr-accent !important;
+                    border-color: $clr-accent !important;
+
+                    &:focus,
+                    &:hover {
+                        background-color: $primary !important;
+                        border-color: $primary !important; 
+
+                        svg g > * {
+                            stroke: $clr-white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .twitter-typeahead {
+            flex-grow: 1;
+            order: 1;
+        }
+
+        .form-control {
+            background-color: $clr-bg-light !important;
+            border-radius: $br-button 0 0 $br-button;
+            border: unset;
+            box-shadow: unset;
+            color: $primary;
+            height: 2.5rem;
+
+            &:focus {
+                color: $primary;
+                font-weight: 600;
+            }
+        }
+        
+        .input-group-append {
+            order: 3;
+
+            button[type=submit].btn.btn-secondary {
+                border-radius: $br-button;
+                background-color: $clr-bg-light;
+                border-color: $clr-bg-light; 
+                height: 2.5rem;
+                width: 2.5rem;
+                padding: unset;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                svg {
+                    height: 22px;
+                    
+                    path {
+                        fill: $primary;
+                    }
+                }
+            }
+        }
+
+        .form-clear {
+            display: flex;
+            order: 2;
+            margin-right: 1rem;
+
+            svg {
+                height: 1.2em;
+                color: $secondary;
+            }
+        }
+    }
+
+    .toggler-logo-wrapper {
+        margin-right: 0.5rem;
+
+        @include breakpoint(min, small) {
+            margin-right: 1rem;
+        }
+
+        @include breakpoint(min, medium) {
+            margin-right: 2rem;
+        }
+
+        @include breakpoint(min, large) {
+            margin-right: 3rem;
+        }
+
+        @include breakpoint(max, large) {
+            position: static;
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .logo-wrapper {
+            padding-left: unset;
+        }
+    }
+    
+
+    .logo-wrapper {
+        @include breakpoint(min, large) {
+            padding-left: unset;
+
+            .navbar-brand {
+                padding-top: 1rem;
+            }
+        }
+
+        svg.header-logo-mobile {
+            height: 2.5rem;
+
+            @include breakpoint(min, large) {
+                display: none;
+            }
+        }
+
+        svg.header-logo-desktop {
+            width: 120px;
+            
+            @include breakpoint(max, large) {
+                display: none;
+            }
+        }
+    }
+}
+
+.nav-wrapper {
+    flex: 1;
+
+    @include breakpoint(max, large) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}
+
+.svg-shape-logo-desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    z-index: -1;
+
+    @include breakpoint(max, large) {
+        display: none;
+    }
+}
+
+#header-top-bar {
+    background-color: unset;
+    color: $clr-text;
+
+    > .container-fluid {
+        position: relative;
+        justify-content: space-between;
+        width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: -1rem;
+            bottom: 0;
+            height: 0.5px;
+            background: $secondary;
+        }
+
+        .marketing {
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+
+            svg {
+                width: 14px;
+                margin-right: 7px;
+
+                > * {
+                    fill: $secondary;
+                }
+            }
+        }
+    }
+}
+
+#shop-nav {
+    justify-content: flex-end;
+    margin-right: 0.25rem;
+    
+    @include breakpoint(min, small) {
+        margin-right: -0.5rem;
+    }
+
+    @include breakpoint(max, large) {
+        .navbar &.nav {
+            flex: 0 0 auto;
+        }    
+    }
+    
+    .nav-link {
+        
+        &:hover,
+        &:focus {
+            .header-icon {
+                background-color: $primary;
+
+                svg {
+                    path,
+                    circle {
+                        stroke: $clr-white;
+                    }
+                }
+            }
+        }
+
+        .header-icon,
+        .header-icon svg path,
+        .header-icon svg circle {
+            transition: $trans;
+        }
+    }
+
+    .account-icon-dropdown,
+    #shop-nav-wish,
+    #shop-nav-compare,
+    .cart-icon-dropdown {
+        .nav-link {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+
+            @include breakpoint(min, small) {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem; 
+            }
+        }
+
+        @include breakpoint(max, medium) {
+            position: static;
+
+            .dropdown-menu {
+                width: 100%;
+                position: absolute;
+                top: 3.5rem;
+                left: 0.25rem;
+                right: 0.25rem;
+                min-width: 200px;
+                max-width: calc(100vw - 0.5rem);
+                border-radius: 0.5rem;
+            }
+        }
+    }
+    
+    .header-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: $clr-bg-light;
+        border-radius: 50%;
+        padding: 5px;
+        
+        svg {
+            max-height: 25px;
+            height: 25px;
+            path {
+                stroke: $primary;
+            }
+        }
+
+    }
+
+    .wishlist-wrapper {
+        position: relative;
+
+        svg {
+            max-height: unset;
+            max-width: 23px;
+            height: 25px;
+        }
+
+        #badge-wl-count {
+            line-height: 1;   
+            font-family: $f-primary;
+            background-color: $secondary;
+            color: $clr-white;
+            font-weight: 600;
+            min-width: __remify(18px);
+            min-height: __remify(18px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: unset;
+            margin-top: unset;
+            top: 0;
+            right: 0;
+            bottom: unset;
+            left: unset;
+            transform: translate(40%, -40%); 
+            padding: 0;      
+        }
+    }
+
+    .account-icon-dropdown {
+        .dropdown-menu {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .dropdown-item {
+            padding: 0.5rem 1.5rem;
+        }
+    }
+
+    .cart-icon-dropdown {
+
+        .header-icon {
+            position: relative;
+
+            svg {
+                max-height: unset;
+                max-width: 20px;
+                height: 25px;
+            }
+
+            span {
+                line-height: 1;
+                font-family: $f-primary;
+                background-color: $secondary;
+                color: $clr-white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                min-width: __remify(18px);
+                min-height: __remify(18px);
+                top: 0;
+                right: 0;
+                bottom: unset;
+                left: unset;
+                transform: translate(40%, -40%);
+                font-weight: 600;
+                margin-top: 0;
+                margin-left: 0;
+                
+            }
+        }
+
+        .cart-icon-dropdown-price {
+            display: none;
+        }
+
+        .cart-dropdown {
+            .table-responsive {
+                padding-top: 1rem;
+            }
+
+            .btn {
+                font-size: 0.75rem;
+            }
+
+            .btn-outline-primary {
+                background-color: transparent;
+
+                &:focus,
+                &:hover {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        box-shadow: 0 0.0625rem 0.75rem rgba($primary, 0.16);
+        overflow: hidden;
+        border-radius: 1.5rem;
+    }
+}
+
+#nav-wishlist-collapse {
+    .wishlist-dropdown-items {
+        padding-top: 1rem;
+    }
+
+    .clickable-row {
+        &:first-child {
+            td {
+                &:first-child {
+                    border-top-left-radius: $br-md;
+                }
+
+                &:last-child {
+                    border-top-right-radius: $br-md;
+                }
+            }
+        }
+
+        &:last-child {
+            td {
+                &:first-child {
+                    border-bottom-left-radius: $br-md;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: $br-md;
+                }
+            }
+        }
+
+        &:hover {
+            td {
+                background-color: $clr-bg-light;
+            }
+        }
+    }
+}

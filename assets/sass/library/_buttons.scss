@@ -1,0 +1,72 @@
+.btn {
+    transition: $trans;
+    line-height: 1.25;
+}
+
+.btn:not(.btn-link) {
+    border-radius: $br-button;
+}
+
+.btn-primary,
+.btn-outline-primary {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: $clr-accent;
+    border: 1px solid $clr-accent;
+    color: $primary;
+    
+    &:focus,
+    &:hover {
+        background-color: $primary;
+        border-color: $primary;
+    }
+}
+
+.btn-outline-primary {
+    border: 1px solid $secondary;
+    color: $primary;
+}
+
+// .btn-outline-secondary {
+
+// }
+
+// Consent Manager
+.consent-btn {
+    @include uppercase;
+}
+
+.consent-btn {
+    border-radius: $br-button;
+}
+
+.consent-btn-tertiary {
+    color: $primary;
+    background-color: $clr-accent;
+    border-color: $clr-accent;
+
+    &:focus,
+    &:hover {
+        color: $clr-white;
+        background-color: $primary;
+        border-color: $primary;
+    }
+}
+
+.badge-circle-1 {
+    border-color: $clr-border-form;
+    color: $secondary;
+}
+
+#add-to-cart {
+    .btn {
+        svg {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+

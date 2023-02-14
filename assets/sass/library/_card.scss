@@ -1,0 +1,90 @@
+@mixin btn-link {
+    border-radius: 0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: $clr-accent;
+    padding: 0.15rem 0;
+    margin: 0.25rem 0.8rem;
+    font-size: 0.75rem;
+    transition: $trans;
+    font-weight: 500;
+
+    &:focus,
+    &:hover {
+        padding: 0.4rem 0.8rem;
+        border-color: $primary;
+        background-color: $primary;
+        color: $clr-white;
+        margin: 0;
+        border-radius: $br-button;
+    }
+}
+
+.card {
+    border-radius: $br-md;
+    border: 1px solid $clr-border-light;
+}
+
+.card-gray {
+    background-color: $clr-bg-light;
+
+    // .card-body {
+        
+    // }
+}
+
+.card-header {
+    background: $clr-bg-green url($bg-img-green-light);
+    background-size: 30%;
+
+    &:first-child {
+        border-radius:  calc($br-md - 1px) calc($br-md - 1px) 0 0;
+
+        &:last-child {
+            border-radius:  calc($br-md - 1px);
+        }
+    }
+
+    .btn-link {
+        border-radius: 0;
+        background: transparent;
+        border: 1px solid transparent;
+        border-bottom-color: $clr-accent;
+        padding: 0.15rem 0;
+        margin: 0.25rem 0.8rem;
+        font-size: 0.75rem;
+        transition: $trans;
+        font-weight: 500;
+
+        &:focus,
+        &:hover {
+            padding: 0.4rem 0.8rem;
+            border-color: $primary;
+            background-color: $primary;
+            color: $clr-white;
+            margin: 0;
+            border-radius: $br-button;
+        }
+    }
+}
+
+.card-products {
+    margin-top: 1rem;
+
+    .card-header {
+        background: $clr-bg-green url($bg-img-green-light);
+        background-size: 30%;
+
+        .btn {
+            @include btn-link();
+        }
+    }
+
+    .checkout-items-item-main {
+        a {
+            color: $primary;
+            font-weight: 500;
+            text-decoration-color: $clr-accent;
+        }
+    }
+}

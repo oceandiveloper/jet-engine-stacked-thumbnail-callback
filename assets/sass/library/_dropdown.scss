@@ -1,0 +1,14 @@
+:not(.navbar-nav) {
+    .dropdown-menu {
+        min-height: 10rem;
+        // z-index: 2001;
+        border-radius: 2rem;
+        box-shadow: 0 0.0625rem 0.75rem rgba($primary, 0.16);
+    
+        &.show {
+            display: grid;
+            align-items: center;
+        }
+    }
+}
+

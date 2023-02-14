@@ -1,0 +1,20 @@
+#consent-settings-btn {
+    background-color: $clr-bg-green;
+    color: $primary;
+    border-color: $clr-border-form;
+
+    &:focus, &:hover {
+        background-color: $primary;
+        color: $clr-white;
+        border-color: $primary;
+    }
+}
+
+.consent-show-more {
+    color: $primary;
+    text-decoration-color: $clr-accent;
+}
+
+.consent-more-description {
+    border-radius: $br-md;
+}

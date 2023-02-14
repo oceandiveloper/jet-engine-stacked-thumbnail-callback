@@ -1,0 +1,32 @@
+body {
+    font-family: $f-primary;
+    font-size: 1rem;
+    color: $clr-text;
+    background-color: $clr-white;
+}
+
+a {
+    color: $primary;
+    text-decoration-color: $clr-accent;
+
+    &:focus,
+    &:hover {
+        text-decoration-color: $primary;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .productlist-filter-headline, .h4, .h5, .h6 {
+    font-family: $f-primary, sans-serif;
+    color: $primary;
+    font-weight: 900;
+}
+
+h2 {
+    font-weight: 900 !important;
+    color: $primary !important;
+    font-size: 45px !important;
+}
+
+hr {
+    border-top-color: $clr-border-light;
+}

@@ -1,0 +1,46 @@
+.checkout-steps {
+    border-radius: $br-button;
+}
+
+.checkout-confirmation {
+    .card {
+        margin-bottom: 2rem;
+
+        .checkout-confirmation-change {
+            text-decoration: none;
+        }
+    }
+
+    .checkout-confirmation-comment {
+        padding: 0.625rem 0.9375rem;
+        border: 1px solid $clr-border-form;
+    }
+
+    .checkout-confirmation-items {
+        .card-header {
+            padding: 0.75rem 1.25rem;
+        }
+    }
+}
+
+.is-checkout {
+    .snippets-checkbox-wrapper {
+        .col-form-label {
+            display: none;
+        }
+    }
+
+    hr + .snippets-checkbox-wrapper {
+        margin-top: 2rem;
+    }
+
+    .snippets-checkbox-wrapper + hr {
+        margin-top: 2rem;
+    }
+}
+
+.direct-advertising {
+    color: $clr-text-light;
+    line-height: 1.1;
+    padding-top: 0.5rem;
+}

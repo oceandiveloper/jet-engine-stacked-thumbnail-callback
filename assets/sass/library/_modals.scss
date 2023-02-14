@@ -1,0 +1,29 @@
+.modal-backdrop {
+    background-color: $secondary;
+    
+    &.show {
+        opacity: 0.5;
+    }
+}
+
+.modal-content {
+    border-radius: $br-modal;
+}
+
+// Consent Manager
+.consent-modal {
+    background-color: rgba($clr-text, 0.85);
+}
+
+.consent-modal-icon {
+    color: $secondary;
+}
+
+.consent-modal-content {
+    border-radius: $br-md;
+    background: $clr-bg-light;
+}
+
+.consent-modal-close {
+    color: $clr-text-light;
+}
