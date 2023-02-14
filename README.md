@@ -31,3 +31,6 @@ selector .jet-rel-list {
   --plus-count-text-size: 1rem;
 }
 ```
+
+# Special Thanks
+Special thanks for [MjHead](https://gist.github.com/MjHead) for providing me with the [code base](https://gist.github.com/MjHead/7eeed858b414657f4b4a291bbbb85d37) for this callback.
