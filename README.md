@@ -2,7 +2,7 @@
 Adds new callback to Dynamic Field widget of JetEngine, which allows to return a list of posts thumbnails including post title and permalink to achieve stacked image layout.
 
 # Instructions
-1. Download project zip.
+1. [Download](https://github.com/oceandiveloper/jet-engine-stacked-thumbnail-callback/archive/refs/heads/main.zip) project zip file.
 2. Install & activate plugin in WordPress (needs JetEngine plugin).
 3. In dynamic field widget *Source* should be "Post/Term/User/Object Data" and Object Field should be the related items for the current object.
 4. Enable option "Filter field output" for dynamic field.
