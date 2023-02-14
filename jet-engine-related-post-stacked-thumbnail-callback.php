@@ -83,7 +83,7 @@ function jet_related_post_stacked_thumbnails($items = [])
     $visible_items = 4;
     if ($count > $visible_items)
     {
-        $count_calc = $count - $visible_items -1;
+        $count_calc = $count - $visible_items + 1;
         $count_output = '<div class="jet-rel-list__item jet-rel-list__item--count">+' . $count_calc . '</div>';
         $count_list_class = ' jet-rel-list--plus';
     }
